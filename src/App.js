@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import Login from './pages/Login';
 function App() {
   const [message, setMessage] = useState('Loading...');
 
@@ -13,6 +13,11 @@ function App() {
   return (
     <div style={{ padding: '2rem', fontFamily: 'Arial' }}>
       <h1>Welcome to Sravan Kumar Educational Services</h1>
+
+
+<Route path="/login" element={<Login />} />
+
+  
       <p>Your frontend is live and ready!</p>
       <p>Backend says: {message}</p>
     </div>
