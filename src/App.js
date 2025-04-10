@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 function App() {
+  const [message, setMessage] = useState('Loading...');
+
+  useEffect(() => {
+    fetch("https://sravan-backend-uc6g.onrender.com/api/hello")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message))
+      .catch((err) => setMessage("Failed to connect to backend."));
+  }, []);
+
   return (
     <div style={{ padding: '2rem', fontFamily: 'Arial' }}>
       <h1>Welcome to Sravan Kumar Educational Services</h1>
       <p>Your frontend is live and ready!</p>
-      <p>Connected to backend at: https://sravan-backend-uc6g.onrender.com</p>
+      <p>Backend says: {message}</p>
     </div>
   );
 }
