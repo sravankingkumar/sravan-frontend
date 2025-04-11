@@ -3,6 +3,14 @@ import Login from './pages/Login';
 function App() {
   const [message, setMessage] = useState('Loading...');
 
+  function App() {
+  return (
+    <div>
+      <h1>Hello from React</h1>
+    </div>
+  );
+}
+  
   useEffect(() => {
     fetch("https://sravan-backend-uc6g.onrender.com/api/hello")
       .then((res) => res.json())
